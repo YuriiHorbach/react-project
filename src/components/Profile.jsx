@@ -1,22 +1,23 @@
 import React from 'react';
+import s from './Profile.module.css';
+
 
 const Profile = () => {
-  return <div className="content">
-    <div className="back-img">
-      <img src="https://eskipaper.com/images/desktop-wallpaper-6.jpg" alt="" />
+  return <div className={s.content}>
+    <div className={s.backImg}>
     </div>
     <div className="">
       ava + description
     </div>
     <div className="">
       My posts
-      <div className="">
+      <div className={s.item}>
         New post
       </div>
-      <div className="">
+      <div className={s.item}>
         post1
       </div>
-      <div className="">
+      <div className={s.item}>
         post2
       </div>
     </div>
