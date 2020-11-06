@@ -3,13 +3,17 @@
   background: plum;
 }
 
-.item {
+.item{
   color: red;
 }
 
-.backImg{
-  background-image: url('https://eskipaper.com/images/desktop-wallpaper-6.jpg');
-   background-repeat: no-repeat;
+
+.backImg img{ 
+
+  max-width: 100%;
+  height: auto;
+  /* background-image: url('https://eskipaper.com/images/desktop-wallpaper-6.jpg');
+   background-repeat: no-repeat; */
   /*background-attachment: fixed;
   background-position: center center;
   background-clip: border-box;
