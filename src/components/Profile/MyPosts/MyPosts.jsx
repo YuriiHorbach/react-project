@@ -9,11 +9,9 @@ const MyPosts = () => {
 
       My post
       <div className={s.item}>
-        <Post />
-        <Post />
-        <Post />
-        <Post />
-        <Post />
+        <Post message="Cool. I understand react" like="34" />
+        <Post message="Me too." like="15" />
+        <Post message="I am a programmer" like="100" />
       </div>
     </div>
   </div>
