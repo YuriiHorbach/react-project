@@ -6,11 +6,8 @@ import ProfileInfo from "./ProfileInfo/ProfileInfo";
 
 const Profile = () => {
     return <div className={s.content}>
-        <ProfileInfo />
         <div>
-            ava + description
-        </div>
-        <div>
+            <ProfileInfo/>
             <MyPosts/>
         </div>
     </div>
