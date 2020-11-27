@@ -5,8 +5,6 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import state from './redux/state.js';
 
-debugger;
-
 ReactDOM.render(
   <React.StrictMode>
     <App posts = {state}/>
