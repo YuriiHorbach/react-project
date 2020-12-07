@@ -5,11 +5,20 @@ import Post from './Post/Post';
 const MyPosts = (props) => {
   let postsElements = props.myPosts_posts.posts.map((m)=><Post message={m.message} like={m.like} />);
 
+  let addPost = ()=> {
+    alert('Yahoooo');
+  }
 
   return <div className={s.content}>
     <div className={s.backImg}>
+      <h3>My post</h3>
+      <div className="">
+        <textarea>   </textarea>
+      </div>
+      <div >
+        <button onClick={addPost}  >Push</button>
+      </div>
 
-      My post
       <div className={s.item}>
         {postsElements}
       </div>
