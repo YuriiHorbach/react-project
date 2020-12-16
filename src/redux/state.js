@@ -18,6 +18,7 @@ let state = {
             {id: 2, message: 'Hello'},
             {id: 3, message: 'By'}
         ],
+        newMessageText: 'new text',
 
         dialogs: [
             {id: 1, name: 'Ivan'},
@@ -35,9 +36,27 @@ export const addPost = () => {
         message: state.profilePage.newPostText,
         like: 0
     };
-    state.profilePage.posts.push(newPost);
+    state.profilePage.messages.push(newPost);
     state.profilePage.newPostText = '';
     rerenderEntireTree(state);
+}
+
+export const addMessage = () => {
+    let newMessage = {
+        id: 5,
+        message: state.dialogsPage.newMessageText
+
+    };
+    state.dialogsPage.messages.push(newMessage);
+    state.dialogsPage.newMessageText = '';
+    rerenderEntireTree(state);
+}
+
+
+
+export const updateNewDialogMessage = (newMessage) => {
+   state.dialogsPage.newMessageText = newMessage;
+   rerenderEntireTree(state);
 }
 
 export const updateNewPostText = (newText) => {
@@ -45,8 +64,10 @@ export const updateNewPostText = (newText) => {
    rerenderEntireTree(state);
 }
 
+
+
 export const subscribe = (observer) => {
-    rerenderEntireTree = observer
+    rerenderEntireTree = observer;
 }
 
 
