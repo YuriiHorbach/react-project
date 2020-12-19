@@ -41,6 +41,14 @@ export const addPost = () => {
     rerenderEntireTree(state);
 }
 
+export const updateNewPostText = (newText) => {
+    state.profilePage.newPostText = newText;
+    rerenderEntireTree(state);
+}
+
+
+
+
 export const addMessage = () => {
     let newMessage = {
         id: 5,
@@ -52,17 +60,14 @@ export const addMessage = () => {
     rerenderEntireTree(state);
 }
 
-
-
 export const updateNewDialogMessage = (newMessage) => {
-   state.dialogsPage.newMessageText = newMessage;
-   rerenderEntireTree(state);
+    state.dialogsPage.newMessageText = newMessage;
+    rerenderEntireTree(state);
 }
 
-export const updateNewPostText = (newText) => {
-   state.profilePage.newPostText = newText;
-   rerenderEntireTree(state);
-}
+
+
+
 
 
 
