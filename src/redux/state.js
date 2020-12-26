@@ -27,7 +27,11 @@ let store = {
 
     },
 
-    rerenderEntireTree() {
+    getState(){
+        return this._state;
+    },
+
+    _callSubscriber() {
        console.log("State changed");
 ````},
 
@@ -39,12 +43,12 @@ let store = {
         };
         this._state.profilePage.messages.push(newPost);
         this._state.profilePage.newPostText = '';
-        rerenderEntireTree(_state);
+        this._callSubscriber(this._state);
     },
 
     updateNewPostText(newText){
         this._state.profilePage.newPostText = newText;
-        rerenderEntireTree(this._state);
+        this._callSubscriber(this._state);
     },
 
     addMessage(){
@@ -55,16 +59,16 @@ let store = {
         };
         this._state.dialogsPage.messages.push(newMessage);
         this._state.dialogsPage.newMessageText = '';
-        rerenderEntireTree(this._state);
+        this._callSubscriber(this._state);
     },
 
     updateNewDialogMessage(newMessage){
         this._state.dialogsPage.newMessageText = newMessage;
-        rerenderEntireTree(this._state);
+        this._callSubscriber(this._state);
     },
 
     subscribe(observer){
-        rerenderEntireTree(observer);
+        this._callSubscriber = observer;
     }
 
 }
