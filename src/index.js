@@ -3,21 +3,21 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import {BrowserRouter} from "react-router-dom";
-import state, {addPost, subscribe, updateNewDialogMessage, updateNewPostText} from "./redux/state.js";
+import store from "./redux/state";
 
 let rerenderEntireTree = (state)=> {
     ReactDOM.render(
-        <React.StrictMode>
+        <BrowserRouter>
             <App state = {state}
-                 addPost = {addPost}
-                 updateNewPostText = {updateNewPostText}
-                 updateNewDialogMessage={updateNewDialogMessage}
+                 addPost = {store.addPost.bind(store)}
+                 updateNewPostText = {store.updateNewPostText}
+                 updateNewDialogMessage={store.updateNewDialogMessage}
             />
-        </React.StrictMode>,
+        </BrowserRouter>,
         document.getElementById('root')
     );
 }
 
-rerenderEntireTree(state);
+rerenderEntireTree(store.getState());
 
-subscribe(rerenderEntireTree);
+store.subscribe(rerenderEntireTree);

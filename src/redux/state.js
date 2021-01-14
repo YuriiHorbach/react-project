@@ -28,6 +28,7 @@ let store = {
     },
 
     getState(){
+        debugger;
         return this._state;
     },
 
@@ -41,12 +42,13 @@ let store = {
             message: this._state.profilePage.newPostText,
             like: 0
         };
-        this._state.profilePage.messages.push(newPost);
+        this._state.profilePage.posts.push(newPost);
         this._state.profilePage.newPostText = '';
         this._callSubscriber(this._state);
     },
 
     updateNewPostText(newText){
+        debugger;
         this._state.profilePage.newPostText = newText;
         this._callSubscriber(this._state);
     },
